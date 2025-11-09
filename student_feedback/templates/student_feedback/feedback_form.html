@@ -1,0 +1,12 @@
+{% extends 'student_feedback/base.html' %}
+{% block content %}
+
+<h2>Submit questions and feedback. If you'd like a response, please include your email</h2>
+
+<form method="POST" action="{% url 'send_feedback' %}">
+    {% csrf_token %}
+    {{ feedback_form }}
+    <button type="submit">Send feedback</button>
+</form>
+
+{% endblock %}
