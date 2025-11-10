@@ -26,3 +26,5 @@ Reply with one word, either "genuine" or "spam"
 if __name__ == '__main__':
     print(classify_feedback('There should be more coffee shops on campus'))  # Should be 'genuine'
     print(classify_feedback('psdjgpidjfghipdfjgh'))  # Should be 'spam'
+
+    
