@@ -11,11 +11,12 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
 from pathlib import Path
+
 import os 
 
 RUNNING_AT_GCP = 'GAE_INSTANCE' in os.environ
 
-GCP_PROJECT = os.getenv('GOOGLE_CLOUD_PROJECT')
+GCP_PROJECT = 'gen-lang-client-0989552802'
 GCP_REGION = 'us-central1'
 BASE_URL = 'https://gen-lang-client-0989552802.uc.r.appspot.com'
 
@@ -78,17 +79,6 @@ TEMPLATES = [
 WSGI_APPLICATION = 'feedback.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/5.2/ref/settings/#databases
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
@@ -96,7 +86,7 @@ DATABASES = {
         'PORT': '3306',
         'NAME': 'feedback',
         'USER': 'feedback_user',
-        'PASSWORD': os.getenv('DB_PASSWORD')
+        'PASSWORD': os.getenv('FEEDBACK_DB_PASSWORD')
     }
 }
 
