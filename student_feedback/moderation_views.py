@@ -76,8 +76,10 @@ def moderate_feedback(request):
             
         return JsonResponse({'success': True, 'status': classification})
 
-    except Exception as e: 
-        logger.exception(f'Error classifing feedback', e)
+    except Exception as e:  # TODO more detailed exception handling 
+        # since this is inside an except block, a logger.exception 
+        # automatically includes a stack trace with exception information 
+        logger.exception(f'Error classifing feedback')  
         return JsonResponse({'success': False, 'error': str(e)}, status=500)
 
 

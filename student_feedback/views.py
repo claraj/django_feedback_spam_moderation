@@ -19,7 +19,7 @@ def send_feedback(request):
             create_moderation_task(feedback.pk)   # Send the ID of the feedback object saved to the database 
             return redirect('thank_you')
         else:
-            return redirect('send_feedback')  # back to home page 
+            return redirect('feedback_form')  # back to home page 
 
 
 def thank_you(request):
